@@ -178,7 +178,7 @@ module repetidor(
         end
         
         else begin
-        buffer = buffer + 1;
+        buffer <= buffer + 1;
         end
     end
 endmodule
@@ -232,6 +232,7 @@ module D7S(
     );
 
 endmodule
+
 
 
 
