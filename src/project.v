@@ -71,6 +71,6 @@ assign uio_out[7:5] = transistor; //asignamos los pines para el transistor.
     //output logic [6:0] d7sp
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, uio_in[7:0], ui_in[7:0] };
+    wire _unused = &{ena, uio_in[7:0], ui_in[7:0], 1'b0};
 
 endmodule
