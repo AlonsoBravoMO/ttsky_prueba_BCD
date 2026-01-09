@@ -56,7 +56,7 @@ module tt_um_D7S (
 wire [2:0] transistor;
 wire [6:0] d7sp;
 
-assign uo_out [7:0] = d7sp; //asignamos la salida como el D7S padre
+assign uo_out [7:1] = d7sp; //asignamos la salida como el D7S padre
 assign uio_out[7:5] = transistor; //asignamos los pines para el transistor.
   D7S D7S_Unit(
     .clk(clk),
@@ -71,6 +71,6 @@ assign uio_out[7:5] = transistor; //asignamos los pines para el transistor.
     //output logic [6:0] d7sp
 
   // List all unused inputs to prevent warnings
-    wire _unused = &{ena, uio_in[7:0], ui_in[7:0], 1'b0};
+    wire _unused = &{ena, uio_in[7:0], ui_in[7:0] uo_out[0], 1'b0};
 
 endmodule
