@@ -60,7 +60,7 @@ assign uo_out [7:0] = d7sp; //asignamos la salida como el D7S padre
 assign uio_out[7:5] = transistor; //asignamos los pines para el transistor.
   D7S D7S_Unit(
     .clk(clk),
-    .rst(rst),
+      .rst(rst_n),
     .transistor(transistor),
     .d7sp(d7sp)
   );
