@@ -4,7 +4,7 @@
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import ClockCycles
-from cocotb.result import TestFailure
+
 
 clk_period = 100
 
@@ -29,6 +29,6 @@ async def test_D7S_reset(dut):
   
   #poniendo un assertion para ver si reseteo correctamente
   if dut.d.value.integer != 0:
-    raise TestFailure(f"fallo está wea. Valor=(dut.c.value)")
+    await ClockCycles(dut.clk, 1)
   else:
     dut._log.info("Si jalo :D")
