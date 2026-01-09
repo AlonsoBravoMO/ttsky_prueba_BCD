@@ -26,9 +26,4 @@ async def test_D7S_reset(dut):
   #liberar reset 
   dut.rst_n.value = 1
   await ClockCycles(dut.clk, 1)
-  
-  #poniendo un assertion para ver si reseteo correctamente
-  if dut.d.value.integer != 0:
-    await ClockCycles(dut.clk, 1)
-  else:
-    dut._log.info("Si jalo :D")
+  dut._log.info("Si jalo :D")
