@@ -30,5 +30,5 @@ async def test_D7S_reset(dut):
   #poniendo un assertion para ver si reseteo correctamente
   if dut.d.value.integer != 0:
     raise TestFailure(f"fallo está wea. Valor=(dut.c.value)")
-  else
+  else:
     dut._log.info("Si jalo :D")
