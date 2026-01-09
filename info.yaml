@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "D7S"      # Project title
-  author:       "Alonso Bravo Montes de Oca"      # Your name
+  author:       "Alonso Bravo Montes de Oca2"      # Your name
   discord:      "alonsobravo"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "contador con display"      # One line description of what your project does
   language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
