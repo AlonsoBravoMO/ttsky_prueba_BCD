@@ -10,12 +10,13 @@ You can also include images in this folder and reference them in the markdown. E
 Contador usando 3D7S, usando un reloj.
 ## How it works
 
-Explain how your project works
+Utiliza un oscilador como reloj y con base en ese reloj se implementa un circuito contador. Posteriormente se aplica el algoritmo doble dabble. Se pasa por una especie de tabla y se multiplexa
 
 ## How to test
 
-Explain how to use your project
+Es tan simple como conectar el reloj y los displays de 7 segmentos. Dado que no tiene señales de entrada.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+1.- Display de 7 segmentos
+2.- Botón de reset
