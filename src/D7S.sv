@@ -134,56 +134,6 @@ module control(
 
 endmodule
 
-module repetidor(
-    input logic clk,
-    input logic rst,
-    input logic [6:0] d7s1,
-    input logic [6:0] d7s2,
-    input logic [6:0] d7s3, 
-    output logic [2:0] transistor,
-    output logic [6:0] d7sp
-);
-    logic [1:0] contador;
-    logic [25:0] buffer; 
-
-    always_ff @(posedge clk or negedge rst) begin
-
-        if (!rst) begin
-        transistor <= 3'b000;
-        d7sp <= 7'b0000001;
-        contador <= 2'd0;
-        buffer <= 26'd0;   
-        end
-
-        else if (buffer == 3) begin
-
-            buffer <= 0;
-            case (contador)
-            2'd0:begin
-                transistor <= 3'b110;
-                d7sp <= d7s1;
-                contador <= 2'd1;
-            end
-            2'd1:begin
-                transistor <= 3'b101;
-                d7sp <= d7s2;
-                contador <= 2'd2;
-            end
-            2'd2:begin
-                transistor <= 3'b011;
-                d7sp <= d7s3;
-                contador <= 2'd0;
-            end            
-            endcase            
-        end
-        
-        else begin
-        buffer <= buffer + 1;
-        end
-    end
-endmodule
-
-
 module D7S(
     input logic clk,
     input logic rst,
@@ -197,7 +147,6 @@ module D7S(
     logic [3:0] middle_d3;
     logic [6:0] middle_d7s1;
     logic [6:0] middle_d7s2;
-    logic [6:0] middle_d7s3;
 
     control control1(
         .clk(clk),
@@ -218,20 +167,11 @@ module D7S(
         .d3(middle_d3),
         .d7s1(middle_d7s1),
         .d7s2(middle_d7s2),
-        .d7s3(middle_d7s3)
-    );
-
-    repetidor repetidor1 (
-        .clk(clk),
-        .rst(rst),
-        .d7s1(middle_d7s1),
-        .d7s2(middle_d7s2),
-        .d7s3(middle_d7s3),
-        .d7sp(d7sp),
-        .transistor(transistor)
+        .d7s3(d7sp)
     );
 
 endmodule
+
 
 
 
