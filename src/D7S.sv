@@ -166,12 +166,12 @@ module repetidor(
             end
             2'd1:begin
                 transistor <= 3'b101;
-                d7sp = d7s2;
+                d7sp <= d7s2;
                 contador <= 2'd2;
             end
             2'd2:begin
                 transistor <= 3'b011;
-                d7sp = d7s3;
+                d7sp <= d7s3;
                 contador <= 2'd0;
             end            
             endcase            
@@ -232,5 +232,6 @@ module D7S(
     );
 
 endmodule
+
 
 
